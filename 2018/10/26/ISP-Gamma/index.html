@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="yanm1ng&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      ISP--Gamma | Hexo
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Hexo</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>ISP--Gamma</h2>
+  <p class="post-date">2018-10-26</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Gamma产生的原因"><a href="#Gamma产生的原因" class="headerlink" title="Gamma产生的原因"></a>Gamma产生的原因</h1><ul>
+<li>人眼对自然亮度感知是非线性的。</li>
+<li>资源总是稀缺的，我们用来记录/展示画面的媒介，动态范围和灰阶预算是有限的。</li>
+</ul>
+<blockquote>
+<p>为了在灰阶预算有限的前提下，协调<strong>自然亮度</strong>和<strong>主观灰度感受</strong>之间的映射关系，gamma就产生了。</p>
+</blockquote>
+<h1 id="Gamma校正的原理"><a href="#Gamma校正的原理" class="headerlink" title="Gamma校正的原理"></a>Gamma校正的原理</h1><ul>
+<li>如果没有gamma，看到的东西如下图：</li>
+</ul>
+<p><img src="/2018/10/26/ISP-Gamma/1.jpg" alt="gamma1"></p>
+<ul>
+<li>真实的信号，进过ISP在没有校正的情况下就会出现下图：</li>
+</ul>
+<p><img src="/2018/10/26/ISP-Gamma/2.jpg" alt="gamma2"></p>
+<ul>
+<li><p>加入ISP gamma后，我们的视觉是这样的：</p>
+<p><img src="/2018/10/26/ISP-Gamma/3.jpg" alt="gamma3"></p>
+</li>
+</ul>
+<ul>
+<li><p>进过gamma校正后，使得输入和输出曲线得到校正：</p>
+<p><img src="/2018/10/26/ISP-Gamma/4.jpg" alt="gamma4"></p>
+</li>
+</ul>
+<p><strong>Viewing Gamma = Camera Gamma x Display Gamma</strong></p>
+<p>==========</p>
+<p><strong><em>Display gamma：</em></strong></p>
+<p><img src="/2018/10/26/ISP-Gamma/5.jpg" alt="gamma5"></p>
+<p><strong><em>Camera gamma：</em></strong></p>
+<p><img src="/2018/10/26/ISP-Gamma/6.png" alt="gamma6"></p>
+<h1 id="Gamma的幂函数"><a href="#Gamma的幂函数" class="headerlink" title="Gamma的幂函数"></a>Gamma的幂函数</h1><p>gamma校正的幂函数曲线来自于心理学上的韦伯-费希纳定律（Weber-Fechner Law）或斯蒂文斯幂定律（stevens’power law）。</p>
+<blockquote>
+<p>韦伯-费希纳定律：用于揭示心理量与物理量之间数量关系的定律。</p>
+<p>斯蒂文斯幂定律：心理量并不随刺激量的对数的上升而上升，而是随刺激量的乘方函数而变化。</p>
+</blockquote>
+<p>通过实验得到Gamma=2.2的sRGB标准，是根据当时主流摄影机和显示器，同时参考了韦伯定律，让大家在制作硬件和管理色彩方面有一个统一的方便标准。</p>
+<h1 id="Gamma-灰阶"><a href="#Gamma-灰阶" class="headerlink" title="Gamma 灰阶"></a>Gamma 灰阶</h1><p>###中灰</p>
+<p><strong>“中灰就是人眼能分辨的所有灰阶的中间点。”</strong></p>
+<p><img src="/2018/10/26/ISP-Gamma/7.jpg" alt="6"></p>
+<h3 id="物体反射率检测"><a href="#物体反射率检测" class="headerlink" title="物体反射率检测"></a>物体反射率检测</h3><p>若定义纯白反射率为1%，纯黑反射率为0%，中灰的反射率不是直觉上的50%，而是在20%左右。</p>
+<p>灰卡的反射率18%–专业相机拍摄用于作为基准。</p>
+<p><img src="/2018/10/26/ISP-Gamma/8.png" alt="8"></p>
+<ul>
+<li><p>当整体环境较暗，微小度亮度增长也会在人的心理是明显的提升，当亮度达到20%左右时候，人度心理已经感受到中灰色概念。剩下一半高光区的灰阶，需要用80%的物理量才能照亮成白色。</p>
+</li>
+<li><p>视觉感受主导一切，媒介上的灰度分布，是通过目测来调的。</p>
+</li>
+</ul>
+<h1 id="相机中的Gamma"><a href="#相机中的Gamma" class="headerlink" title="相机中的Gamma"></a>相机中的Gamma</h1><p>一个典型的完整的图像处理系统主要包括摄像采集部件、存储参数部件和显示输出部件。</p>
+<p><img src="/2018/10/26/ISP-Gamma/9.jpg" alt="9"></p>
+<hr>
+<p>参考文档：<br><a href="https://www.zhihu.com/question/27467127/answer/37555901（韩世麟，benman）" target="_blank" rel="noopener">https://www.zhihu.com/question/27467127/answer/37555901（韩世麟，benman）</a><br><a href="https://zhuanlan.zhihu.com/p/41162449（凹凸思）" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41162449（凹凸思）</a></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#ISP 图像">
+    <span class="tag-code">ISP 图像</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/10/25/算法-简单排序/">
+        <span class="nav-arrow">← </span>
+        
+          算法--简单排序
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Gamma产生的原因"><span class="toc-nav-text">Gamma产生的原因</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Gamma校正的原理"><span class="toc-nav-text">Gamma校正的原理</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Gamma的幂函数"><span class="toc-nav-text">Gamma的幂函数</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Gamma-灰阶"><span class="toc-nav-text">Gamma 灰阶</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#物体反射率检测"><span class="toc-nav-text">物体反射率检测</span></a></li></ol></li></ol><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#相机中的Gamma"><span class="toc-nav-text">相机中的Gamma</span></a></li>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2018/10/26/ISP-Gamma/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "ISP--Gamma",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://yoursite.com/2018/10/26/ISP-Gamma/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
